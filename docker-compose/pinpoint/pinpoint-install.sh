@@ -18,7 +18,7 @@ cd ./pinpoint-docker/
 
 isPort=$(netstat -tnlp | grep 8080)
 
-if [ $isPort == "" ];then
+if [ -n "$isPort" ];then
   echo "8080포트를 사용중입니다. "
   echo ".env 파일의 WEB_SERVER_PORT=8080 을 사용하지 않는 포트번호로 변경해주세요"
   exit
